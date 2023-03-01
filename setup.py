@@ -9,7 +9,7 @@ if os.name == "nt":
     EXTRA_COMPILE_ARGS = []
     MACROS = [("_WIN", "")]
 elif platform.system() == "Darwin":
-    EXTRA_COMPILE_ARGS = ["-std=c++17"]
+    EXTRA_COMPILE_ARGS = ["-std=c++11"]
     MACROS = []
 else:
     EXTRA_COMPILE_ARGS = []
