@@ -1,13 +1,19 @@
+import platform
 import os
 from setuptools import setup, Extension
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-if not os.name == "nt":
+if os.name == "nt":
+    EXTRA_COMPILE_ARGS = []
+    MACROS = [("_WIN", "")]
+elif platform.system() == "Darwin":
+    EXTRA_COMPILE_ARGS = ["-std=c++11"]
     MACROS = []
 else:
-    MACROS = [("_WIN", "")]
+    EXTRA_COMPILE_ARGS = []
+    MACROS = []
 
 DECRYPT_INCLUDES = ["pspdecrypt", "pspdecrypt/libkirk"]
 SIGN_INCLUDES = ["sign_np"]
@@ -33,7 +39,7 @@ def main():
           ],
           packages=["pyeboot"],
           ext_modules=[
-              Extension("pyeboot.decrypt", decrypt_sources, include_dirs=DECRYPT_INCLUDES, define_macros=MACROS),
+              Extension("pyeboot.decrypt", decrypt_sources, include_dirs=DECRYPT_INCLUDES, define_macros=MACROS, extra_compile_args=EXTRA_COMPILE_ARGS),
               Extension("pyeboot.sign", sign_sources, include_dirs=SIGN_INCLUDES, define_macros=MACROS),
           ],
         )
