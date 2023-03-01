@@ -1,0 +1,3 @@
+[submodule "pspdecrypt"]
+	path = pspdecrypt
+	url = https://github.com/John-K/pspdecrypt.git
