@@ -17,7 +17,7 @@ extern "C"
     #include <Python.h>
     #include <stdio.h>
 
-    static PyObject *method_run(PyObject *self, PyObject *args, PyObject *kwargs)
+    static PyObject *method_decrypt(PyObject *self, PyObject *args, PyObject *kwargs)
     {
         char *infile = NULL;
         char *outfile = NULL;
@@ -55,7 +55,7 @@ extern "C"
     }
 
     static PyMethodDef DecryptMethods[] = {
-        {"run", (PyCFunction)method_run, METH_VARARGS | METH_KEYWORDS, "Python interface for pspdecrypt."},
+        {"decrypt", (PyCFunction)method_decrypt, METH_VARARGS | METH_KEYWORDS, "Python interface for pspdecrypt."},
         {NULL, NULL, 0, NULL}
     };
 

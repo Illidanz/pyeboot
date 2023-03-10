@@ -6,9 +6,7 @@ Python interface for pspdecrypt and sign_np.
 
 ## Usage
 ```
-import pyeboot.decrypt
-pyeboot.decrypt.run("EBOOT.BIN", "BOOT.BIN")
-
-import pyeboot.sign
-pyeboot.sign.run("BOOT.BIN", "EBOOT.BIN", "1")
+import pyeboot
+pyeboot.decrypt("EBOOT.BIN", "BOOT.BIN")
+pyeboot.sign("BOOT.BIN", "EBOOT.BIN", "1")
 ```

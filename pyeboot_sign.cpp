@@ -7,7 +7,7 @@ extern "C"
 {
     #include <Python.h>
 
-    static PyObject *method_run(PyObject *self, PyObject *args, PyObject *kwargs)
+    static PyObject *method_sign(PyObject *self, PyObject *args, PyObject *kwargs)
     {
         char *infile = NULL;
         char *outfile = NULL;
@@ -35,7 +35,7 @@ extern "C"
     }
 
     static PyMethodDef SignMethods[] = {
-        {"run", (PyCFunction)method_run, METH_VARARGS | METH_KEYWORDS, "Python interface for sign_np."},
+        {"sign", (PyCFunction)method_sign, METH_VARARGS | METH_KEYWORDS, "Python interface for sign_np."},
         {NULL, NULL, 0, NULL}
     };
 
