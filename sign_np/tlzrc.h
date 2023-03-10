@@ -5,7 +5,11 @@
 
 #include <stdio.h>
 #include <string.h>
+#if defined(__MACH__)
+#include <stdlib.h>
+#else 
 #include <malloc.h>
+#endif
 
 #include "utils.h"
 
