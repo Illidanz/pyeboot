@@ -42,7 +42,7 @@ class build_ext_subclass(build_ext):
 
 def main():
     setup(name="pyeboot",
-          version="0.2.0",
+          version="0.2.1",
           author="Illidan",
           description="Python interface for pspdecrypt and sign_np.",
           long_description=long_description,
