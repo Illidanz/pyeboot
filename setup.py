@@ -40,9 +40,9 @@ class build_ext_subclass(build_ext):
         finally:
             del self.compiler._compile
 
-def main():
+if __name__ == "__main__":
     setup(name="pyeboot",
-          version="0.2.3",
+          version="0.3.0",
           author="Illidan",
           description="Python interface for pspdecrypt and sign_np.",
           long_description=long_description,
@@ -58,7 +58,5 @@ def main():
               Extension("pyeboot.sign", sign_sources, include_dirs=SIGN_INCLUDES, define_macros=MACROS),
           ],
           cmdclass = {"build_ext": build_ext_subclass},
+          python_requires=">=3.10",
         )
-
-if __name__ == "__main__":
-    main()
